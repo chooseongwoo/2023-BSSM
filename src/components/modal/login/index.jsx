@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./style.css";
 
-const Login = ({ closeLoginModal }) => {
+const Login = ({ closeLoginModal, openRegisterModal }) => {
   const handleModalClick = (e) => {
     if (e.target === e.currentTarget) {
       closeLoginModal();
     }
   };
+
   return (
     <div className="modal-container" onClick={handleModalClick}>
       <div className="login">
@@ -23,7 +24,15 @@ const Login = ({ closeLoginModal }) => {
           </div>
         </div>
         <button className="submit">로그인</button>
-        <div className="toRegister">회원가입 하러 가기</div>
+        <div
+          className="toRegister"
+          onClick={() => {
+            closeLoginModal();
+            openRegisterModal();
+          }}
+        >
+          회원가입 하러 가기
+        </div>
       </div>
     </div>
   );

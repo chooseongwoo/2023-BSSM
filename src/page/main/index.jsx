@@ -7,6 +7,8 @@ import Register from "../../components/modal/register";
 
 const Main = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+
   const openLoginModal = () => {
     setIsLoginModalOpen(true);
   };
@@ -15,10 +17,29 @@ const Main = () => {
     setIsLoginModalOpen(false);
   };
 
+  const openRegisterModal = () => {
+    setIsRegisterModalOpen(true);
+  };
+
+  const closeRegisterModal = () => {
+    setIsRegisterModalOpen(false);
+  };
+
   return (
     <div>
-      <Header openLoginModal={openLoginModal} />
-      {isLoginModalOpen && <Login closeLoginModal={closeLoginModal} />}
+      <Header
+        openLoginModal={openLoginModal}
+        openRegisterModal={openRegisterModal}
+      />
+      {isLoginModalOpen && (
+        <Login
+          closeLoginModal={closeLoginModal}
+          openRegisterModal={openRegisterModal}
+        />
+      )}
+      {isRegisterModalOpen && (
+        <Register closeRegisterModal={closeRegisterModal} />
+      )}
     </div>
   );
 };

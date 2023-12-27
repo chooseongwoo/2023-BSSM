@@ -1,0 +1,81 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  background-color: black;
+  width: 35vw;
+  height: 50vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+#cancel {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.inputs {
+  margin-top: 7%;
+}
+
+.input {
+  border-bottom: white solid 2px;
+  width: 30vw;
+}
+
+.input input {
+  background-color: black;
+  color: white;
+  border: none;
+  margin-top: 7%;
+  width: 30vw;
+}
+
+.input input:focus {
+  outline: none;
+}
+
+.input input::-ms-input-placeholder {
+  color: white;
+}
+
+.input input::placeholder {
+  color: white;
+}
+
+.submit {
+  width: 8vw;
+  height: 7vh;
+  color: white;
+  border: white solid 2px;
+  border-radius: 5px;
+  background-color: black;
+  margin-top: 15%;
+}
+
+.submit:hover {
+  background-color: #d9d9d9;
+  cursor: pointer;
+}
+
+.toRegister {
+  color: #cecece;
+  border-bottom: #cecece solid 2px;
+  margin-top: 5%;
+  cursor: pointer;
+  text-decoration: none;
+}
