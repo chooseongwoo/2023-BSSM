@@ -86,10 +86,12 @@ const Grade = () => {
                 ))}
               </tbody>
             </table>
+            <p className="grade-title">마이스터 역량 인증제</p>
+            <input type="number" min={0} name="meister" max={150}/>
           </div>
         </div>
       </div>
-      <Link to="score">
+      <Link to="/score">
         <button className="check">점수 확인</button>
       </Link>
     </div>

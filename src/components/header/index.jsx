@@ -6,7 +6,7 @@ import "./style.css";
 const Header = ({ openLoginModal, openRegisterModal }) => {
   return (
     <div className="header">
-      <Link to="/">
+      <Link to="/" style={{ textDecoration: "none", marginLeft: "20%" }}>
         <p className="title">SRS</p>
       </Link>
       <div className="path">
