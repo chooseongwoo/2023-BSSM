@@ -12,7 +12,7 @@ const Register = ({ closeRegisterModal }) => {
   return (
     <div className="modal-container" onClick={handleModalClick}>
       <div className="register">
-        <p id="cancel" onClick={closeRegisterModal}>
+        <p className="cancel" onClick={closeRegisterModal}>
           X
         </p>
         <div className="inputs">

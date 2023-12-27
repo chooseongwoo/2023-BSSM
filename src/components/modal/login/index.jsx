@@ -12,7 +12,7 @@ const Login = ({ closeLoginModal, openRegisterModal }) => {
   return (
     <div className="modal-container" onClick={handleModalClick}>
       <div className="login">
-        <p id="cancel" onClick={closeLoginModal}>
+        <p className="cancel" onClick={closeLoginModal}>
           X
         </p>
         <div className="inputs">

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import "./style.css";
 
 const Grade = () => {
@@ -24,10 +26,10 @@ const Grade = () => {
           <table>
             <tbody>
               {leftSubject.map((subject, index) => (
-                <tr>
-                  <td key={index}>{subject}</td>
+                <tr key={index}>
+                  <td>{subject}</td>
                   <td>
-                    <form className="grade">
+                    <form className="grade-form">
                       <select>
                         {grades.map((grade) => (
                           <option key={grade}>{grade}</option>
@@ -46,13 +48,15 @@ const Grade = () => {
             <table>
               <tbody>
                 {rightTopSubject.map((subject, index) => (
-                  <tr>
-                    <td key={index}>{subject}</td>
+                  <tr key={index}>
+                    <td>{subject}</td>
                     <td>
-                      <form className="grade">
+                      <form className="grade-form">
                         <select>
                           {grades.map((grade) => (
-                            <option value={grade}>{grade}</option>
+                            <option value={grade} key={grade}>
+                              {grade}
+                            </option>
                           ))}
                         </select>
                       </form>
@@ -67,10 +71,10 @@ const Grade = () => {
             <table>
               <tbody>
                 {rightBottomSubject.map((subject, index) => (
-                  <tr>
-                    <td key={index}>{subject}</td>
+                  <tr key={index}>
+                    <td>{subject}</td>
                     <td>
-                      <form className="grade">
+                      <form className="grade-form">
                         <select>
                           {grades.map((grade) => (
                             <option key={grade}>{grade}</option>
@@ -85,7 +89,9 @@ const Grade = () => {
           </div>
         </div>
       </div>
-      <button className="check">점수 확인</button>
+      <Link to="score">
+        <button className="check">점수 확인</button>
+      </Link>
     </div>
   );
 };
