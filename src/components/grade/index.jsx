@@ -23,7 +23,7 @@ const Grade = () => {
       <div className="grade">
         <div className="left">
           <p className="grade-title">보통 교과 및 전문 교과 과목</p>
-          <table>
+          <table className="gradeTable">
             <tbody>
               {leftSubject.map((subject, index) => (
                 <tr key={index}>
@@ -45,7 +45,7 @@ const Grade = () => {
         <div className="right">
           <div className="top">
             <p className="grade-title">진로 선택 과목</p>
-            <table>
+            <table className="gradeTable">
               <tbody>
                 {rightTopSubject.map((subject, index) => (
                   <tr key={index}>
@@ -68,7 +68,7 @@ const Grade = () => {
           </div>
           <div className="bottom">
             <p className="grade-title">체육·예술 과목</p>
-            <table>
+            <table className="gradeTable">
               <tbody>
                 {rightBottomSubject.map((subject, index) => (
                   <tr key={index}>

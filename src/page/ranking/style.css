@@ -1,0 +1,30 @@
+.ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toMain {
+  width: 8vw;
+  height: 7vh;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.rankTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+    background-color: black;
+}
+
+.rankTable th,
+.rankTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}

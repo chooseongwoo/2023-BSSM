@@ -21,17 +21,17 @@
   font-weight: 600;
 }
 
-table {
+.gradeTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1em;
 }
 
-td:first-child {
+.gradeTable td:first-child {
   width: 50%;
 }
 
-td:last-child {
+.gradeTable td:last-child {
   width: 50%;
 }
 
@@ -44,7 +44,7 @@ td:last-child {
   text-align: center;
 }
 
-td {
+.gradeTable td {
   border: 1px solid black;
   padding: 0.5em;
   text-align: center;
