@@ -7,6 +7,7 @@ const Header = () => {
     <div className="container">
       <p className="title">SRS</p>
       <div className="path">
+        <p>랭킹</p>
         <p>로그인</p>
         <p>회원가입</p>
       </div>
