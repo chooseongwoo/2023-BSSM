@@ -40,6 +40,8 @@ const Main = () => {
       {isRegisterModalOpen && (
         <Register closeRegisterModal={closeRegisterModal} />
       )}
+
+      
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 
@@ -7,7 +8,9 @@ const Header = ({ openLoginModal, openRegisterModal }) => {
     <div className="header">
       <p className="title">SRS</p>
       <div className="path">
-        {/* <p>랭킹</p> */}
+        <Link to="/ranking" style={{ textDecoration: "none" }}>
+          <p>랭킹</p>
+        </Link>
         <p onClick={openLoginModal}>로그인</p>
         <p onClick={openRegisterModal}>회원가입</p>
       </div>
