@@ -21,6 +21,7 @@ const Login = ({ closeLoginModal, openRegisterModal }) => {
     axios.post("http://localhost:3000/api/auth/login", formData).then((res) => {
       alert("로그인 성공");
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("email", formData.email);
       closeLoginModal();
     });
   };

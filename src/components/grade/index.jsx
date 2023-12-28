@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import axios from "axios";
 
 const Grade = () => {
   const grades = ["A", "B", "C", "D", "E"];
@@ -97,6 +98,27 @@ const Grade = () => {
     setScores(newScores);
   };
 
+  const handleSubmit = () => {
+    const formData = {
+      email: localStorage.getItem("email"),
+      score: localStorage.getItem("totalScore"),
+    };
+
+    axios
+      .post("http://localhost:3000/api/score/add", formData)
+      .then((res) => {
+        alert(res.data.message);
+      })
+      .catch((res) => {
+        console.log(res);
+      });
+  };
+
+  const handleCheckButtonClick = () => {
+    calculateScore();
+    handleSubmit();
+    window.location.href = "/score";
+  };
   return (
     <div className="grade-container">
       <div className="grade">
@@ -198,7 +220,12 @@ const Grade = () => {
           </div>
         </div>
       </div>
-      <button className="check" onClick={calculateScore}>
+      <button
+        className="check"
+        onClick={() => {
+          handleCheckButtonClick();
+        }}
+      >
         점수 확인
       </button>
     </div>
