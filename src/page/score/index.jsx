@@ -9,6 +9,7 @@ const Score = () => {
 
   return (
     <div className="score">
+      <p>최대 점수 420점 중</p>
       <p>
         당신의 점수는 <span>{totalScore}점</span>입니다.
       </p>
