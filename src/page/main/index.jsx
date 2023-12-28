@@ -9,7 +9,7 @@ import Grade from "../../components/grade";
 const Main = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
-  const isLogin = true;
+  const isLogin = false;
 
   const openLoginModal = () => {
     setIsLoginModalOpen(true);

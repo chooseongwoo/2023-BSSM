@@ -9,6 +9,8 @@ const Login = ({ closeLoginModal, openRegisterModal }) => {
     }
   };
 
+  const handleSubmit = () => {};
+
   return (
     <div className="modal-container" onClick={handleModalClick}>
       <div className="login">
@@ -23,7 +25,9 @@ const Login = ({ closeLoginModal, openRegisterModal }) => {
             <input type="password" placeholder="비밀번호를 입력하시오." />
           </div>
         </div>
-        <button className="submit">로그인</button>
+        <button className="submit" onClick={handleSubmit}>
+          로그인
+        </button>
         <div
           className="toRegister"
           onClick={() => {
