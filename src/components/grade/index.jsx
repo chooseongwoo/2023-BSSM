@@ -35,6 +35,13 @@ const Grade = () => {
   });
 
   const calculateScore = () => {
+    if (parseInt(scores.meister, 10) > 150) {
+      alert(
+        "마이스터 역량 인증제는 150을 초과할 수 없습니다. 다시 입력해주세요."
+      );
+      return;
+    }
+
     let totalScore = 0;
 
     for (const subject in scores.subjects) {
@@ -45,13 +52,12 @@ const Grade = () => {
       totalScore += gradeMultiplier * credit;
     }
 
-    // Add meister score
     totalScore += parseInt(scores.meister, 10) || 0;
 
     console.log("총 점수는", totalScore, "입니다.");
 
-    // Save the result to local storage
     localStorage.setItem("totalScore", totalScore);
+    window.location.href = "/score";
   };
 
   const getCreditsForSubject = (subject) => {
@@ -192,11 +198,9 @@ const Grade = () => {
           </div>
         </div>
       </div>
-      <Link to="/score">
-        <button className="check" onClick={calculateScore}>
-          점수 확인
-        </button>
-      </Link>
+      <button className="check" onClick={calculateScore}>
+        점수 확인
+      </button>
     </div>
   );
 };
