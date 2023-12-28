@@ -13,8 +13,21 @@ const Header = ({ openLoginModal, openRegisterModal }) => {
         <Link to="/ranking" style={{ textDecoration: "none" }}>
           <p>랭킹</p>
         </Link>
-        <p onClick={openLoginModal}>로그인</p>
-        <p onClick={openRegisterModal}>회원가입</p>
+        {!localStorage.getItem("token") ? (
+          <>
+            <p onClick={openLoginModal}>로그인</p>
+            <p onClick={openRegisterModal}>회원가입</p>
+          </>
+        ) : (
+          <p
+            onClick={() => {
+              localStorage.removeItem("token");
+              window.location.reload();
+            }}
+          >
+            로그아웃
+          </p>
+        )}
       </div>
     </div>
   );

@@ -9,7 +9,6 @@ import Grade from "../../components/grade";
 const Main = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
-  const isLogin = false;
 
   const openLoginModal = () => {
     setIsLoginModalOpen(true);
@@ -42,7 +41,7 @@ const Main = () => {
       {isRegisterModalOpen && (
         <Register closeRegisterModal={closeRegisterModal} />
       )}
-      {isLogin && <Grade />}
+      {localStorage.getItem("token") && <Grade />}
     </div>
   );
 };

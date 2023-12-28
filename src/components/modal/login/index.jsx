@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./style.css";
+import axios from "axios";
 
 const Login = ({ closeLoginModal, openRegisterModal }) => {
   const handleModalClick = (e) => {
@@ -9,7 +10,20 @@ const Login = ({ closeLoginModal, openRegisterModal }) => {
     }
   };
 
-  const handleSubmit = () => {};
+  const initialFormData = {
+    email: "",
+    pw: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+
+  const handleSubmit = () => {
+    axios.post("http://localhost:3000/api/auth/login", formData).then((res) => {
+      alert("로그인 성공");
+      localStorage.setItem("token", res.data.token);
+      closeLoginModal();
+    });
+  };
 
   return (
     <div className="modal-container" onClick={handleModalClick}>
@@ -19,10 +33,29 @@ const Login = ({ closeLoginModal, openRegisterModal }) => {
         </p>
         <div className="inputs">
           <div className="input">
-            <input type="text" placeholder="이메일을 입력하시오." />
+            <input
+              type="text"
+              placeholder="이메일을 입력하시오."
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  email: e.target.value,
+                });
+              }}
+              autoFocus
+            />
           </div>
           <div className="input">
-            <input type="password" placeholder="비밀번호를 입력하시오." />
+            <input
+              type="password"
+              placeholder="비밀번호를 입력하시오."
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  pw: e.target.value,
+                });
+              }}
+            />
           </div>
         </div>
         <button className="submit" onClick={handleSubmit}>
