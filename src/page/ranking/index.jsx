@@ -1,26 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./style.css";
+import axios from "axios";
 
 const Ranking = () => {
-  const scoreRank = [
-    {
-      rank: 1,
-      name: "정소울",
-      score: 270,
-    },
-    {
-      rank: 2,
-      name: "추성우",
-      score: 250,
-    },
-    {
-      rank: 3,
-      name: "송윤서",
-      score: 230,
-    },
-  ];
+  const [scoreRank, setScoreRank] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/score/view")
+      .then((res) => {
+        setScoreRank(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   return (
     <div className="ranking">
@@ -36,10 +31,10 @@ const Ranking = () => {
           </tr>
         </thead>
         <tbody>
-          {scoreRank.map((item) => (
+          {scoreRank.map((item, index) => (
             <tr key={item.rank}>
-              <td>{item.rank}</td>
-              <td>{item.name}</td>
+              <td>{index + 1}</td>
+              <td>{item.nickname}</td>
               <td>{item.score}</td>
             </tr>
           ))}
